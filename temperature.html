@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <header>
+    <h1>Temperature Converter</h1>
+  </header>
+
+  <main>
+
+    <div id="converter">
+      <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+      <button type="button" id="convert-to-fahrenheit">Convert to Fahrenheit</button>
+      <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
+      <button type="button" id="convert-to-celsius">Convert to Celsius</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; temperatureconverter</p>
+  </footer>
+
+  <script>
+    // Convert Celsius to Fahrenheit
+    function celsiusToFahrenheit() {
+      var celsius = document.getElementById("celsius").value;
+      var fahrenheit = (celsius * 9 / 5) + 32;
+
+      document.getElementById("fahrenheit").value = fahrenheit;
+    }
+
+    // Convert Fahrenheit to Celsius
+    function fahrenheitToCelsius() {
+      var fahrenheit = document.getElementById("fahrenheit").value;
+      var celsius = (fahrenheit - 32) * 5 / 9;
+
+      document.getElementById("celsius").value = celsius;
+    }
+
+    // Add event listeners to the buttons
+    document.getElementById("convert-to-fahrenheit").addEventListener("click", celsiusToFahrenheit);
+    document.getElementById("convert-to-celsius").addEventListener("click", fahrenheitToCelsius);
+  </script>
+
+</body>
+</html>
